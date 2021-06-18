@@ -14,7 +14,7 @@
 
     <profiles>
         <profile>
-            <id>with-test</id>
+            <id>with-tests</id>
             <modules>
                 <module>sample</module>
             </modules>
@@ -26,12 +26,19 @@
         <maven.compiler.target>16</maven.compiler.target>
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.assertj</groupId>
-            <artifactId>assertj-core</artifactId>
-            <version>3.19.0</version>
-        </dependency>
-    </dependencies>
+    <dependencyManagement>  <!--(1)-->
+        <dependencies>
+            <dependency>
+                <groupId>org.reflections</groupId>
+                <artifactId>reflections</artifactId>
+                <version>0.9.12</version>
+            </dependency>
+            <dependency>
+                <groupId>org.assertj</groupId>
+                <artifactId>assertj-core</artifactId>
+                <version>3.19.0</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 </project>
